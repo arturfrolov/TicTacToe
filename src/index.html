@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <meta name="title" content="My portfolio">
+    <meta name="description" content="Here you can explore my works and learn more about me.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arturfrolov.github.io">
+    <meta property="og:title" content="My portfolio">
+    <meta property="og:description" content="ЗHere you can explore my works and learn more about me.">
+    <meta property="og:image" content="img/og_image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://arturfrolov.github.io">
+    <meta property="twitter:title" content="My portfolio">
+    <meta property="twitter:description" content="Here you can explore my works and learn more about me.">
+    <meta property="twitter:image" content="img/og_image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icons/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="icons/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon/favicon-16x16.png">
+    <link rel="manifest" href="icons/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="icons/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <aside class="sidepanel">
+        <a href="#" class="sidepanel__link">
+            <svg class="icon icon_white">
+                <use xlink:href="icons/sprite.svg#facebook"></use>
+            </svg>
+        </a>
+        <a href="#" class="sidepanel__link">
+            <svg class="icon icon_white">
+                <use xlink:href="icons/sprite.svg#instagram"></use>
+            </svg>
+        </a>
+        <a href="https://github.com/arturfrolov" target="_blank" class="sidepanel__link">
+            <svg class="icon icon_white">
+                <use xlink:href="icons/sprite.svg#github"></use>
+            </svg>
+        </a>
+        <div class="sidepanel__divider"></div>
+        <div class="sidepanel__text"><span>Social media</span></div>
+    </aside>
+
+    <div class="menu">
+        <div class="menu__block">
+            <div class="menu__close">
+                <svg class="icon icon__close">
+                    <use xlink:href="icons/sprite.svg#close"></use>
+                </svg>
+            </div>
+
+            <nav>
+                <ul class="menu__list">
+                    <li class="menu__link"><a href="#about-me">ABOUT ME</a></li>
+                    <li class="menu__link"><a href="#resume">MY EXPERIENCE</a></li>
+                    <li class="menu__link"><a href="#skills">MY SKILLS</a></li>
+                    <li class="menu__link"><a href="#portfolio">MY PROJECTS</a></li>
+                    <li class="menu__link"><a href="#price">PRICE LIST</a></li>
+                    <li class="menu__link"><a href="#contacts">CONTACTS</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu__social">
+                <a href="https://github.com/arturfrolov" target="_blank">
+                    <svg class="icon">
+                        <use xlink:href="icons/sprite.svg#github"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon">
+                        <use xlink:href="icons/sprite.svg#instagram"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon">
+                        <use xlink:href="icons/sprite.svg#facebook"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="menu__overlay"></div>
+    </div>
+
+    <section class="promo">
+        <div class="hamburger">
+            <span></span>
+            <span class="long"></span>
+            <span></span>
+        </div>
+        <div class="container">
+            <div class="title title_fs16 promo__subtitle promo__subtitle_white">My name is Artur Frolov</div>
+            <h1 class="title title_fs48 promo__title">I am a web developer from Dnipro city</h1>
+            <div class="promo__btns">
+                <a href="#portfolio" class="promo__link btn">Portfolio</a>
+                <a href="#about-me" class="promo__link">About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-me" id="about-me">
+        <div class="container">
+            <div class="about-me__grid">
+                <div class="about-me__photo">
+                    <!-- <img srcset="img/photo_min.jpg 300w,
+                                img/photo.jpg 400w"
+                        sizes="(max-width: 575px) 280px,
+                                (min-width: 576px) 400px"
+                    src="img/photo.jpg" alt="photo"> -->
+                    <picture>
+                        <!-- <source type="image/webp" srcset="img/photo.webp"> -->
+                        <source media="(max-width: 575px)" srcset="img/photo_min.jpg">
+                        <source media="(min-width: 576px)" srcset="img/photo.jpg">
+                        <img src="img/photo.jpg" alt="photo">
+                    </picture>
+                </div>
+                <div class="about-me__wrapper">
+                    <div class="title title_fs16 about-me__title">About Me</div>
+                    <h2 class="title about-me__subtitle">My name is Artur</h2>
+                    <div class="divider"></div>
+                    <div class="about-me__descr">
+                        <p>Hey there! I'm Artur, a front-end developer on a mission to craft captivating web experiences. Delving into the realms of HTML, CSS, and JavaScript, I create responsive, user-friendly interfaces that leave a lasting impression.</p>
+                        <p>Explore my portfolio to see my passion for design and dedication to staying ahead of the curve. I thrive on collaboration and always seek to learn and grow as a developer.</p>
+                        <p>Feel free to reach out if you want to discuss projects or connect. 
+                        Thank you for visiting, and I hope you enjoy your time here!</p>
+                    </div>
+                </div>
+                <div class="about-me__cart-grid">
+                    <div class="cart-item">
+                        <div class="cart-item__icon">
+                            <svg class="icon icon__cart">
+                                <use xlink:href="icons/sprite.svg#web"></use>
+                            </svg>
+                        </div>
+                        <div class="cart-item__descr">
+                            <div class="title title_fs14">Web Development</div>
+                            <div class="cart-item__text">
+                                I excel in creating dynamic and responsive websites using HTML, CSS, and JavaScript. My code is clean, efficient, and designed to experiences across devices and browsers.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="cart-item__icon">
+                            <svg class="icon icon__cart">
+                                <use xlink:href="icons/sprite.svg#app"></use>
+                            </svg>
+                        </div>
+                        <div class="cart-item__descr">
+                            <div class="title title_fs14">Application Development</div>
+                            <div class="cart-item__text">
+                                I'm adept at developing applications that solve real-world problems. Whether it's building standalone software or integrating functionality into web platforms.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="cart-item__icon">
+                            <svg class="icon icon__cart icon__cart_size27">
+                                <use xlink:href="icons/sprite.svg#uiux"></use>
+                            </svg>
+                        </div>
+                        <div class="cart-item__descr">
+                            <div class="title title_fs14">UI/UX Design</div>
+                            <div class="cart-item__text">
+                                With a strong eye for aesthetics and user-centric design, I understand the importance of intuitive navigation and strive to deliver delightful interactions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resume" id="resume">
+        <div class="container">
+            <div class="title title_fs16 title__section-title">Experience</div>
+            <h2 class="title title__section-subtitle">How I will be useful</h2>
+            <div class="divider"></div>
+
+            <div class="resume__wrapper">
+                <div class="resume__column">
+                    <h3 class="title title_fs20 resume__column-title">Education</h3>
+                    <ul>
+                        <li>
+                            <div class="resume__item">
+                                <div class="resume__item-head">
+                                    <div class="resume__item-icon">
+                                        <svg class="icon icon__item">
+                                            <use xlink:href="icons/sprite.svg#study"></use>
+                                        </svg>
+                                    </div>
+                                    <h4 class="title title_fs14">University of Technology</h4>
+                                    <div class="resume__item-location">Specialist Diploma | Dnipro (2011-2016)</div>
+                                </div>
+                                <div class="resume__item-body">
+                                    I got my education in Specialist, Geoinformational Systems and Technologies at Dnipro University of Technology.
+                                    During my time there, I gained some seriously awesome skills that have been a game-changer for my career. I learned how to work with cutting-edge geoinformational tech like a boss, analyzing data like a pro. 
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="resume__item">
+                                <div class="resume__item-head">
+                                    <div class="resume__item-icon">
+                                        <svg class="icon icon__item">
+                                            <use xlink:href="icons/sprite.svg#udemy"></use>
+                                        </svg>
+                                    </div>
+                                    <h4 class="title title_fs14">Udemy</h4>
+                                    <div class="resume__item-location">Web Development Courses (2021-2022)</div>
+                                </div>
+                                <div class="resume__item-body">
+                                    I decided to fully immerse myself in the world of web development. I realized that web development is my true calling. After all, who wouldn't want to create awesome websites and work digital magic?
+                                    I enrolled in Udemy's web development course. It provided valuable skills and practical projects, enhancing my expertise in HTML, CSS, JavaScript, and more. The experience was enriching and empowering.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="resume__column">
+                    <h3 class="title title_fs20 resume__column-title">Education</h3>
+                    <ul>
+                        <li>
+                            <div class="resume__item">
+                                <div class="resume__item-head">
+                                    <div class="resume__item-icon">
+                                        <svg class="icon icon__item">
+                                            <use xlink:href="icons/sprite.svg#developer"></use>
+                                        </svg>
+                                    </div>
+                                    <h4 class="title title_fs14">Front-End Developer</h4>
+                                    <div class="resume__item-location">Udemy (2022-2023)</div>
+                                </div>
+                                <div class="resume__item-body">
+                                    I realized that I wanted to specifically focus on Front-End Development. So, I delved deeper into Front-End Development courses. Through hands-on projects and expert guidance, I honed my skills in HTML, CSS, and JavaScript. Learning the latest frameworks and librarys, like React and Vue.js, has opened up new possibilities for building responsive and dynamic web applications.
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="resume__item">
+                                <div class="resume__item-head">
+                                    <div class="resume__item-icon">
+                                        <svg class="icon icon__item">
+                                            <use xlink:href="icons/sprite.svg#designer"></use>
+                                        </svg>
+                                    </div>
+                                    <h4 class="title title_fs14">Front-End Developer</h4>
+                                    <div class="resume__item-location">Mentor (2022-2023)</div>
+                                </div>
+                                <div class="resume__item-body">
+                                    Continuing as a Front-End Developer, I joined a mentor-led training program. With their guidance, I mastered advanced concepts and improved my problem-solving skills. Real-world projects and personalized feedback elevated my expertise. I now feel confident and equipped to excel in the dynamic world of web development.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="title title_fs16 skills__title title__section-title">Skills</div>
+            <h2 class="title title__section-subtitle">What I use in my work</h2>
+            <div class="divider"></div>
+
+            <div class="skills__wrapper">
+                <div class="skills__wrapper-item">
+                    <div class="skills__icon">
+                        <img src="icons/skills/html5.svg" alt="html5">
+                    </div>
+                    <div class="title title_fs14 skills__wrapper-subtitle">HTML5</div>
+                    <div class="skills__wrapper-descr">It is specifically responsible for creating the framework of your website or application, and the fifth version will enable me to create a more SEO-optimized structure for your product.</div>
+                </div>
+                <div class="skills__wrapper-item">
+                    <div class="skills__icon">
+                        <img src="icons/skills/css3.svg" alt="css3">
+                    </div>
+                    <div class="title title_fs14 skills__wrapper-subtitle">CSS3</div>
+                    <div class="skills__wrapper-descr">This style language allows me to create any desired appearance for your website or application. The possibilities are limitless, limited only by your imagination!</div>
+                </div>
+                <div class="skills__wrapper-item">
+                    <div class="skills__icon">
+                        <img src="icons/skills/js.svg" alt="javascript">
+                    </div>
+                    <div class="title title_fs14 skills__wrapper-subtitle">Java Script</div>
+                    <div class="skills__wrapper-descr">This programming language allows me to bring anything to life: sliders, pop-ups, tooltips, tabs, fetching data from the server, and much more.</div>
+                </div>
+                <div class="skills__wrapper-item">
+                    <div class="skills__icon">
+                        <img src="icons/skills/jquery.svg" alt="jquery">
+                    </div>
+                    <div class="title title_fs14 skills__wrapper-subtitle">Jquery</div>
+                    <div class="skills__wrapper-descr">The jQuery library will speed up development. While it's not mandatory to integrate it into the project, I have the skillset to work with it if needed.</div>
+                </div>
+                <div class="skills__wrapper-item">
+                    <div class="skills__icon">
+                        <img src="icons/skills/react.svg" alt="react">
+                    </div>
+                    <div class="title title_fs14 skills__wrapper-subtitle">React</div>
+                    <div class="skills__wrapper-descr">This library enables the creation of web applications. We can build a highly interactive product tailored precisely to your objectives.</div>
+                </div>
+                <div class="skills__wrapper-item">
+                    <div class="skills__icon">
+                        <img src="icons/skills/nodejs.svg" alt="node">
+                    </div>
+                    <div class="title title_fs14 skills__wrapper-subtitle">Node.js</div>
+                    <div class="skills__wrapper-descr">This platform allows <br>
+                         us to develop the backend for your product – the "brains" that perform actions behind the scenes, unseen by the user.</div>
+                </div>
+                <div class="skills__wrapper-item">
+                    <div class="skills__icon">
+                        <img src="icons/skills/mongodb.svg" alt="mongo">
+                    </div>
+                    <div class="title title_fs14 skills__wrapper-subtitle">Mongo.db</div>
+                    <div class="skills__wrapper-descr">This is a non-relational database that will store data for your website or application.</div>
+                </div>
+            </div>
+
+            <div class="skills__rating">
+                <div class="skills__rating-item">
+                    <div class="title title_fs14 skills__rating-title">Website Development</div>
+                    <div class="skills__rating-percentages">100%</div>
+                    <div class="skills__rating-scale">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="skills__rating-item">
+                    <div class="title title_fs14 skills__rating-title">Application Development</div>
+                    <div class="skills__rating-percentages">85%</div>
+                    <div class="skills__rating-scale">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="skills__rating-item">
+                    <div class="title title_fs14 skills__rating-title">Data Handling</div>
+                    <div class="skills__rating-percentages">90%</div>
+                    <div class="skills__rating-scale">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="skills__rating-item">
+                    <div class="title title_fs14 skills__rating-title">Creativity</div>
+                    <div class="skills__rating-percentages">75%</div>
+                    <div class="skills__rating-scale">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="skills__rating-item">
+                    <div class="title title_fs14 skills__rating-title">Design Creation</div>
+                    <div class="skills__rating-percentages">90%</div>
+                    <div class="skills__rating-scale">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="skills__rating-item">
+                    <div class="title title_fs14 skills__rating-title">Soft skills</div>
+                    <div class="skills__rating-percentages">95%</div>
+                    <div class="skills__rating-scale">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="title title_fs16 title__section-title">Portfolio</div>
+            <h2 class="title title__section-subtitle">My Projects</h2>
+            <div class="divider"></div>
+
+            <div class="portfolio__wrapper">
+                <a href="https://arturfrolov.github.io/uber/" target="_blank" class="portfolio__item">
+                    <img src="img/myWork/uber.jpg" alt="Uber">
+                </a>
+                <a href="https://arturfrolov.github.io/pulse/" target="_blank" class="portfolio__item">
+                    <img src="img/myWork/pulse.jpg" alt="Pulse">
+                </a>
+                <a href="https://arturfrolov.github.io/food/" target="_blank" class="portfolio__item">
+                    <img src="img/myWork/food.jpg" alt="food">
+                </a>
+                <a href="#" class="portfolio__item vertical">
+                    <img src="img/myWork/plans.jpg" alt="test">
+                </a>
+                <a href="#" class="portfolio__item">
+                    <img src="img/myWork/ipad.jpg" alt="test">
+                </a>
+                <a href="#" class="portfolio__item horizontal">
+                    <img src="img/myWork/mac.jpg" alt="test">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="price" id="price">
+        <div class="container">
+            <div class="title title_fs16 title__section-title">Price List</div>
+            <div class="divider price__divider"></div>
+
+            <div class="price__wrapper">
+                <div class="price__item">
+                    <h3 class="title title_fs14 price__title">Landing-page</h3>
+                    <div class="title title_fs14 price__cost">Starting from 500$</div>
+                    <div class="price__text">One-Page Website for Service/Product Presentation/...</div>
+                </div>
+                <div class="price__item">
+                    <h3 class="title title_fs14 price__title">Web Application</h3>
+                    <div class="title title_fs14 price__cost">Starting from 1000$</div>
+                    <div class="price__text">In-Browser Application for Enhanced Comfort</div>
+                </div>
+                <div class="price__item">
+                    <h3 class="title title_fs14 price__title">Corporate Website</h3>
+                    <div class="title title_fs14 price__cost">Starting from 1000$</div>
+                    <div class="price__text">Website for Your Business or Company</div>
+                </div>
+                <div class="price__item">
+                    <h3 class="title title_fs14 price__title">Android/iOS Application</h3>
+                    <div class="title title_fs14 price__cost">Starting from 1500$</div>
+                    <div class="price__text">Mobile Application for Any OS</div>
+                </div>
+                <div class="price__item">
+                    <h3 class="title title_fs14 price__title">Online Store</h3>
+                    <div class="title title_fs14 price__cost">Starting from 2000$</div>
+                    <div class="price__text">Sales Tool for Your Online Business</div>
+                </div>
+                <div class="price__item">
+                    <h3 class="title title_fs14 price__title">Design</h3>
+                    <div class="title title_fs14 price__cost">Customized</div>
+                    <div class="price__text">I will create a design for your website/application...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <div class="contacts__wrapper">
+                <div class="contacts__photo">
+                    <img src="img/photo.jpg" alt="photo">
+                </div>
+                <div class="contacts__descr">
+                    <div class="title title_fs16 contacts__title">Contacts</div>
+                    <h2 class="title contacts__subtitle">Contact Me</h2>
+                    <div class="divider"></div>
+
+                    <div class="title title_fs14 contacts__text">Whichever way is convenient for you:</div>
+                    <div class="contacts__social">
+                        <a href="#" class="contacts__link">
+                            <svg class="icon icon__contacts">
+                                <use xlink:href="icons/sprite.svg#facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="contacts__link">
+                            <svg class="icon icon__contacts">
+                                <use xlink:href="icons/sprite.svg#telegram"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="contacts__link">
+                            <svg class="icon icon__contacts">
+                                <use xlink:href="icons/sprite.svg#instagram"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="title title_fs14 contacts__text">Or, leave your contact information, and I'll personally get back to you:</div>
+                    <form action="#" class="contacts__form">
+                        <div class="contacts__input">
+                            <input name="name" required id="name" type="text">
+                            <label for="name">Your name</label>
+                        </div>
+                        <div class="contacts__input">
+                            <input name="email" required id="email" type="email">
+                            <label for="email">Your email</label>
+                        </div>
+                        <div class="contacts__textarea">
+                            <textarea name="text" id="text"></textarea>
+                            <label for="text">Your message</label>
+                        </div>
+                        <div class="contacts__triggers">
+                            <button class="contacts__btn btn">Send message</button>
+                            <div class="contacts__policy">
+                                <input name="policy" required type="checkbox">
+                                <span>I agree with <a href="/policy.html">the privacy policy</a></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
