@@ -1,13 +1,15 @@
 {
-  "name": "food",
+  "name": "tictactoe",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=development&&webpack serve",
-    "build:dev": "set NODE_ENV=development&&webpack",
-    "build:prod": "set NODE_ENV=production&&webpack",
-    "clean": "rd /s /q dist"
+    "start": "set NODE_ENV=development && vite build && vite preview",
+    "dev": "set NODE_ENV=development&&vite",
+    "prod": "set NODE_ENV=production&&vite build",
+    "optimize": "set NODE_ENV=development&&vite optimize",
+    "clean": "rd /s /q dist",
+    "clear:linux": "rm -rf dist"
   },
   "author": "",
   "license": "ISC",
@@ -19,27 +21,22 @@
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
+    "@rollup/plugin-alias": "^5.0.1",
+    "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-url": "^8.0.2",
     "babel-loader": "^9.1.2",
-    "copy-webpack-plugin": "^11.0.0",
     "core-js": "^3.31.1",
-    "css-loader": "^6.7.3",
-    "group-css-media-queries-loader": "^4.3.0",
-    "html-loader": "^4.2.0",
-    "html-webpack-plugin": "^5.5.1",
-    "image-webpack-loader": "^8.1.0",
-    "mini-css-extract-plugin": "^2.7.5",
-    "postcss": "^8.4.23",
-    "postcss-loader": "^7.2.4",
+    "postcss-nesting": "^12.0.1",
     "postcss-preset-env": "^8.3.2",
-    "resolve-url-loader": "^5.0.0",
     "sass": "^1.62.1",
-    "sass-loader": "^13.2.2",
-    "style-loader": "^3.3.2",
-    "webpack": "^5.81.0",
-    "webpack-cli": "^5.0.2",
-    "webpack-dev-server": "^4.13.3"
+    "vite": "^4.5.0",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-html-purgecss": "^0.1.1",
+    "vite-plugin-svgr": "^4.1.0"
   },
   "dependencies": {
+    "bootstrap": "^5.3.2",
+    "dotenv": "^16.3.1",
     "normalize.css": "^8.0.1"
   }
 }

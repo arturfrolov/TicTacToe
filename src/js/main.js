@@ -1,27 +1,21 @@
-import tabs from './modules/tabs';
-import calc from './modules/calc';
-import cards from './modules/cards';
-import forms from './modules/forms';
-import modal from './modules/modal';
-import slider from './modules/slider';
-import timer from './modules/timer';
-import { openModal } from './modules/modal';
+import 'bootstrap';
+import '../../index.html';
+import '../sass/style.scss';
+import '../img/spinner.svg';
+import '../icons/sprite.svg';
+import resize from './modules/resize';
+import hamburgerMenu from './modules/hamburger-menu';
+import fixedmenu from './modules/fixedmenu';
+import search from './modules/search';
+import forms from './modules/form';
 
-const modalTimerId = setTimeout( () => openModal('.modal', modalTimerId), 50000);
-
-tabs('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
-calc();
-cards();
-forms('form', '.modal', modalTimerId);
-modal('[data-modal]', '.modal', modalTimerId);
-timer('.timer', '2023-09-06');
-slider({
-    container: '.offer__slider',
-    nextArrow: '.offer__slider-next',
-    prevArrow: '.offer__slider-prev',
-    slide: '.offer__slide',
-    totalCounter: '#total',
-    currentCounter: '#current',
-    wrapper: '.offer__slider-wrapper',
-    field: '.offer_slider-inner',
+resize('.menu', '.container', 'p-0');
+hamburgerMenu({
+  hamburgerSelector: '.js-hamburger',
+  menuSelector: '.menu',
+  closeElemSelector: '.js-menu__close',
+  overlaySelector: '.overlay',
 });
+fixedmenu();
+search();
+forms('form', '.modal', '.modal-close');

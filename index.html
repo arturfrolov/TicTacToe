@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zrenie</title>
+    <link rel="stylesheet" href="src/sass/style.scss">
+</head>
+<body>
+    <header class='header' id='up'>
+        <div class='header__subheader'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-lg-2 d-flex align-self-center'>
+                        <a href='#' class='header__logo'>
+                            <img src='src/icons/logo.svg' alt='logo'>
+                        </a>
+                    </div>
+                    <div class='col-lg-2'>
+                        <div class='phonecontacts'>
+                            <a href="tel:+80985554100" class="phonecontacts__phone">+380 (98) 555 41 00</a>
+                            <a href="tel:+80665554100" class="phonecontacts__phone">+380 (66) 555 41 00</a>
+                            <div class='phonecontacts__call' data-bs-toggle="modal" data-bs-target="#myModal">
+                                <div class='phonecontacts__call_text'>Перезвоните мне</div>
+                                <svg class="phonecontacts__call_greenarrow">
+                                    <use xlink:href="icons/sprite.svg#greenarrow"></use>
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class='col-lg-2'>
+                        <div class='schedule'>
+                            <div class='schedule__work'>Работа call центра</div>
+                            <div class='schedule__time'>Пн-Пт: 8:00-21:00</div>
+                            <div class='schedule__time'>Сб-Вс: 8:00-20:00</div>
+                        </div>
+                    </div>
+                    <div class='col-lg-2'>
+                        <div class='follow-us'>
+                            <div class='follow-us__text'>Следите за нами</div>
+                            <div class='follow-us__social'>
+                                <a href='#'>
+                                    <svg class="follow-us__social_inst">
+                                        <use xlink:href="icons/sprite.svg#instagram"></use>
+                                    </svg>
+                                </a>
+                                <a href='#'>
+                                    <svg class="follow-us__social_youtube">
+                                        <use xlink:href="icons/sprite.svg#youtube"></use>
+                                    </svg>
+                                </a>
+                                <a href='#'>
+                                    <svg class="follow-us__social_facebook">
+                                        <use xlink:href="icons/sprite.svg#facebook"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-lg-2 d-flex align-self-center'>
+                        <div class='search header__search'>
+                            <div class="wrap">
+                                <form action='#'>
+                                    <input type="text" class="input" placeholder="Поиск">
+                                    <svg class="search__icon header__search_icon js-search">
+                                        <use xlink:href="icons/sprite.svg#search"></use>
+                                    </svg>
+                                </form>
+                            </div>
+                            <div class='header__search_text js-search'>Поиск</div>
+                        </div>
+                    </div>
+                    <div class='col-lg-2 d-flex align-self-center justify-content-end'>
+                        <button type="button" class="btn btn-warning button header__btn" data-bs-toggle="modal" data-bs-target="#myModal">Записаться на прием</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='header__md'>
+            <div class='container'>
+                <div class='row align-items-center justify-content-between'>
+                    <div class='col-auto order-2 col-sm-4 order-md-1 col-md-3 d-flex justify-content-start'>
+                        <a href='#' class='header__logo'>
+                            <img src='src/icons/logo.svg' alt='logo'>
+                        </a>
+                    </div>
+                    <div class='col-auto order-1 col-sm-1 order-md-2 offset-md-7 col-md-1'>
+                        <svg class="header__callback" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <use xlink:href="icons/sprite.svg#phone"></use>
+                        </svg>
+                    </div>
+                    <div class='col-auto order-3 col-sm-1 order-md-3 col-md-1 d-flex justify-content-end'>
+                        <div class='hamburger js-hamburger'>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='menu'>
+            <div class='menu__block'>
+                <div class='container'>
+                    <nav class='menu__nav'>
+                        <ul class='menu__list'>
+                            <li class='menu__logo'>
+                                <a href='#'>
+                                    <img src='src/icons/logoblue.svg' alt='logo'>
+                                </a>
+                            </li>
+                            <li class='menu__item'>
+                                <a href='#'>Заболевания</a>
+                                <span class='arrow menu__arrow'></span>
+                            </li>
+                            <li class='menu__item'>
+                                <a href='#'>Услуги</a>
+                                <span class='arrow menu__arrow'></span>
+                            </li>
+                            <li class='menu__item'>
+                                <a href='#'>Больницы</a>
+                                <span class='arrow menu__arrow'></span>
+                            </li>
+                            <li class='menu__item'>
+                                <a href='#'>Врачи</a>
+                                <span class='arrow menu__arrow'></span>
+                            </li>
+                            <li class='menu__item'>
+                                <a href='#'>Цены</a>
+                                <span class='arrow menu__arrow'></span>
+                            </li>
+                            <li class='menu__item'>
+                                <a href='#'>Отзывы</a>
+                                <span class='arrow menu__arrow'></span>
+                            </li>
+                            <li class='menu__item'>
+                                <a href='#'>Блог</a>
+                                <span class='arrow menu__arrow'></span>
+                            </li>
+                            <li class='menu__item'>
+                                <a href='#'>О сервисе</a>
+                                <span class='arrow menu__arrow'></span>
+                            </li>
+                            <li class='menu__item'><a href='#'>Контакты</a>
+                                <span class='arrow menu__arrow'></span>
+                            </li>
+                            <li class='menu__list-item'>
+                                <div class='search menu__search'>
+                                    <div class="wrap">
+                                        <form action='#'>
+                                            <input type="text" class="input" placeholder="Поиск">
+                                            <svg class="search__icon menu__search_icon js-search">
+                                                <use xlink:href="icons/sprite.svg#searchgreen"></use>
+                                            </svg>
+                                        </form>
+                                    </div>
+                                    <div class='menu__search_text js-search'>Поиск</div>
+                                </div>
+                                <button type="button" class="btn btn-warning button menu__btn" data-bs-toggle="modal" data-bs-target="#myModal">Записаться на прием</button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class='menu__close js-menu__close'></div>
+            <div class='overlay'></div>
+        </div>
+    </header>
+    <div class='pagenav'>
+        <div class='container'>
+            <div class='row'>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 pt-3">
+                        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="#">Блог</a></li>
+                        <li class="breadcrumb-item"><a href="#">Новости</a></li>
+                        <li class="breadcrumb-item active colorgray" aria-current="page">Всемирный доклад о проблемах здоровья</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <section class='report'>
+        <div class='container'>
+            <div class='row justify-content-center'>
+                <div class='col-12 col-lg-10'>
+                    <h1 class='title report__title'>Всемирный доклад о проблемах здоровья</h1>
+                </div>
+                <div class='col-12 col-lg-10 mt-3 d-flex'>
+                    <div class='report__chapter'>Новости</div>
+                    <div class='report__date'>23 февраля 2020</div>
+                </div>
+                <div class='col-12 col-lg-10 mt-3 mt-md-4'>
+                    <div class='report__img'>
+                        <picture>
+                            <source media="(max-width: 575px)" srcset='src/img/main-small.jpg'>
+                            <source media="(min-width: 576px)" srcset='src/img/main-medium.jpg'>
+                            <source media="(min-width: 992px)" srcset='src/img/main.jpg'>
+                            <img src="src/img/main.jpg" alt="photo">
+                        </picture>
+                    </div>
+                </div>
+                <div class='col-12 col-lg-10 mt-3 mt-md-4 mt-lg-5'>
+                    <div class='report__descr'>
+                        На нашей планете проживает менее 8 миллиардов людей, из которых у 2,2 млрд. нарушено зрение. Причиной могло быть врожденное или приобретенное заболевание, которое у некоторых привело к слепоте. По сути, каждый третий имеет недостаточное зрение. И почти у половины это произошло по разным причинам.
+                    </div>
+                </div>
+                <div class='col-12 col-lg-10 d-flex'>
+                    <div class='social'>
+                        <a class='social__link' href='#'>
+                            <svg class="social__facebook">
+                                <use xlink:href="icons/sprite.svg#facebook-blue"></use>
+                            </svg>
+                        </a>
+                        <a class='social__link' href='#'>
+                            <svg class="social__pinterest">
+                                <use xlink:href="icons/sprite.svg#pinterest"></use>
+                            </svg>
+                        </a>
+                        <div class='social__link social__plus'></div>
+                    </div>
+                    <div class='report__factor'>
+                        <h4 class='subtitle report__subtitle'>Основные факторы роста числа людей с недостаточным зрением:
+                        </h4>
+                        <div class='report__list'>
+                            <div class='report__list-item'>
+                                <div class='star'></div>
+                                <div class='report__list-text'>
+                                    Старение населения
+                                </div>
+                            </div>
+                            <div class='report__list-item'>
+                                <div class='star'></div>
+                                <div class='report__list-text'>
+                                    Изменение образа жизни
+                                </div>
+                            </div>
+                            <div class='report__list-item'>
+                                <div class='star'></div>
+                                <div class='report__list-text'>
+                                    Ограниченный доступ к офтальмологической помощи
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-12 col-lg-8 mt-3 mt-md-4'>
+                    <h4 class='subtitle report__subtitle'>Вопрос можно частично решить при помощи:
+                    </h4>
+                    <div class='report__list'>
+                        <div class='report__list-item'>
+                            <div class='star'></div>
+                            <div class='report__list-text'>
+                                Лупы
+                            </div>
+                        </div>
+                        <div class='report__list-item'>
+                            <div class='star'></div>
+                            <div class='report__list-text'>
+                                Обучением чтению шрифтом Брайля
+                            </div>
+                        </div>
+                        <div class='report__list-item'>
+                            <div class='star'></div>
+                            <div class='report__list-text'>
+                                Ориентации на местности и передвижению с использованием трости
+                            </div>
+                        </div>
+                        <div class='report__list-item'>
+                            <div class='star'></div>
+                            <div class='report__list-text'>
+                                Создание приложений для слабовидящих
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-12 col-lg-8 mt-5 d-flex justify-content-between'>
+                    <div class='report__text d-none d-md-flex'>
+                        65 миллионов человек страдают слепотой. Это могло быть населением целой страны. При этом вылечить людей можно было бы за 1 день (если причина нарушения зрения, например, катаракта). К сожалению, 800 миллионов людей на планете не могут позволить себе приобретение очков.
+                    </div>
+                    <div class='report__infographic'>
+                        <div class='report__item'>
+                            <div class='report__icon'>
+                                <svg class="report__icon_british">
+                                    <use xlink:href="icons/sprite.svg#britishppl"></use>
+                                </svg>
+                            </div>
+                            <div class='report__item-descr'>
+                                <div class='report__item-subheader'>65 000 000</div>
+                                <div class='report__item-text'>человек слепые</div>
+                            </div>
+                        </div>
+                        <div class='report__item mt14'>
+                            <div class='report__icon'>
+                                <svg class="report__icon_calendar">
+                                    <use xlink:href="icons/sprite.svg#calendar"></use>
+                                </svg>
+                            </div>
+                            <div class='report__item-descr'>
+                                <div class='report__item-subheader'>за 1 день</div>
+                                <div class='report__item-text'>можно вылечить катаракту</div>
+                            </div>
+                        </div>
+                        <div class='report__item mt40'>
+                            <div class='report__icon'>
+                                <svg class="report__icon_glasses">
+                                    <use xlink:href="icons/sprite.svg#glasses"></use>
+                                </svg>
+                            </div>
+                            <div class='report__item-descr'>
+                                <div class='report__item-subheader'>800 000 000</div>
+                                <div class='report__item-text'>людей не могут купить очки</div>
+                            </div>
+                        </div>
+                        <img class='report__logo' src='src/icons/littlelogo.svg' alt='logo'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='conclusions'>
+        <div class='container'>
+            <div class='row justify-content-center'>
+                <div class='col-lg-8'>
+                    <h2 class='title conclusions__title'>Какие же выводы можно сделать?</h2>
+                </div>
+                <div class='col-lg-8 mt-4 mt-lg-5'>
+                    <div class='conclusions__list-item'>
+                        <div class='conclusions__list-item-num'>1.</div>
+                        <div>Проблем с нарушениями зрения больше среди людей:</div>
+                    </div>
+                </div>
+                <div class='col-lg-8 mt-4 mt-lg-4'>
+                    <div class='conclusions__problems'>
+                        <div class='conclusions__problems-block'>
+                            <div class='conclusions__problems-item'>
+                                <svg class="conclusions__problems-house">
+                                    <use xlink:href="icons/sprite.svg#house"></use>
+                                </svg>
+                            </div>
+                            <div class='conclusions__problems-text'>
+                                Живущих в сельской местности
+                            </div>
+                        </div>
+                        <div class='conclusions__problems-block'>
+                            <div class='conclusions__problems-item'>
+                                <svg class="conclusions__problems-poor">
+                                    <use xlink:href="icons/sprite.svg#poor"></use>
+                                </svg>
+                            </div>
+                            <div class='conclusions__problems-text'>
+                                Малоимущих
+                            </div>
+                        </div>
+                        <div class='conclusions__problems-block'>
+                            <div class='conclusions__problems-item'>
+                                <svg class="conclusions__problems-women">
+                                    <use xlink:href="icons/sprite.svg#women"></use>
+                                </svg>
+                            </div>
+                            <div class='conclusions__problems-text'>
+                                Женщин
+                            </div>
+                        </div>
+                        <div class='conclusions__problems-block'>
+                            <div class='conclusions__problems-item'>
+                                <svg class="conclusions__problems-elderly">
+                                    <use xlink:href="icons/sprite.svg#elderly"></use>
+                                </svg>
+                            </div>
+                            <div class='conclusions__problems-text'>
+                                Пожилых людей
+                            </div>
+                        </div>
+                        <div class='conclusions__problems-block'>
+                            <div class='conclusions__problems-item'>
+                                <svg class="conclusions__problems-invalids">
+                                    <use xlink:href="icons/sprite.svg#invalids"></use>
+                                </svg>
+                            </div>
+                            <div class='conclusions__problems-text'>
+                                Ивалидов
+                            </div>
+                        </div>
+                        <div class='conclusions__problems-block'>
+                            <div class='conclusions__problems-item'>
+                                <svg class="conclusions__problems-ethnic">
+                                    <use xlink:href="icons/sprite.svg#ethnic"></use>
+                                </svg>
+                            </div>
+                            <div class='conclusions__problems-text'>
+                                Этнических меньшинств и коренного населения
+                            </div>
+                        </div>
+                        <img class="conclusions__problems-logo" src="src/icons/littlelogo.svg" alt="logo">
+                    </div>
+                </div>
+                <div class='col-lg-8 mt-4 mt-lg-4'>
+                    <div class='conclusions__list-item'>
+                        <div class='conclusions__list-item-num'>2.</div>
+                        <div>Качество офтальмологического лечения близорукости в регионах с низким и  средним уровнем дохода в 4 раза ниже, чем в регионах с высоким уровнем.</div>
+                    </div>
+                </div>
+                <div class='col-lg-8 mt-4 mt-lg-4'>
+                    <div class='conclusions__list-item'>
+                        <div class='conclusions__list-item-num'>3.</div>
+                        <div>Распространенность слепоты в странах Африки в 8 раз выше, чем в странах с высоким уровнем дохода. Статистика заболеваемости катаракты и трахоматозного трихиаза выше у женщин.</div>
+                    </div>
+                </div>
+                <div class='col-lg-8 mt-4 mt-lg-4'>
+                    <div class='conclusions__list-item'>
+                        <div class='conclusions__list-item-num'>4.</div>
+                        <div>Для оказания адресной офтальмологической помощи 1 миллиарду людей, страдающих близорукостью, дальнозоркостью или слепотой, вызванной катарактой, нужно 14,3 миллиардов долларов США.</div>
+                    </div>
+                </div>
+                <div class='col-lg-8 mt-4 mt-lg-4'>
+                    <div class='conclusions__help'>
+                        <div class='conclusions__help-item'>
+                            <div class='conclusions__help-icon'>
+                                <svg class="conclusions__help-money">
+                                    <use xlink:href="icons/sprite.svg#money"></use>
+                                </svg>
+                            </div>
+                            <div class='conclusions__help-descr'>
+                                <div class='conclusions__help-subheader'>14 300 000 000 $</div>
+                                <div class='conclusions__help-text'>Надо для оказания адресной офтальмологической помощи</div>
+                            </div>
+                        </div>
+                        <div class='conclusions__help-item'>
+                            <div class='conclusions__help-icon'>
+                                <svg class="conclusions__help-africappl">
+                                    <use xlink:href="icons/sprite.svg#africappl"></use>
+                                </svg>
+                            </div>
+                            <div class='conclusions__help-descr'>
+                                <div class='conclusions__help-subheader'>1 000 000 000 $</div>
+                                <div class='conclusions__help-text'>
+                                    Людей, страдающих близорукостью, дальнозоркостью или слепотой, вызванной катарактой.
+                                </div>
+                            </div>
+                        </div>
+                        <img class='conclusions__help-logo' src='src/icons/littlelogo.svg' alt='logo'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='impairment'>
+        <div class='container'>
+            <div class='row justify-content-center'>
+                <div class='col-lg-8'>
+                    <h2 class='title impairment__title'>
+                        Почему число случаев нарушений зрения растет?
+                    </h2>
+                </div>
+                <div class='col-lg-8 mt-3 mt-md-4 mt-lg-5'>
+                    <h4 class='subtitle impairment__subtitle'>
+                        Какие заболевания непосредственно приводят к слепоте:
+                    </h4>
+                    <ul class='impairment__listnum mt-3'>
+                        <li class='impairment__listnum-item'>
+                            <a href='#'>Катаракта</a>
+                        </li>
+                        <li class='impairment__listnum-item mt-2'>
+                            <a href='#'>Трахома</a>
+                        </li>
+                        <li class='impairment__listnum-item mt-2'>
+                            <a href='#'>Нарушения рефракции</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class='col-lg-8 mt-3'>
+                    <div class='impairment__text'>
+                        В то же время существует немало болезней, которые не должны оставаться без внимания и должного лечения, такие как, сухость глаз, конъюнктивит. С учетом демографического роста и постепенного повышения средней продолжительности жизни, можно ожидать увеличение общего числа людей с глазными болезнями.
+                    </div>
+                </div>
+                <div class='col-lg-8 mt-4 mt-lg-5'>
+                    <h4 class='subtitle impairment__subtitle '>
+                        Основные факторы самых распространенных глазных заболеваний:
+                    </h4>
+                    <div class='impairment__liststar mt-3'>
+                        <div class='impairment__liststar-item'>
+                            <div class='star'></div>
+                            <div class='impairment__liststar-text'>
+                                <span class='impairment__liststar-text_blue'>Миопия (близорукость)</span>
+                                развивается в связи с большими зрительными нагрузками. Проводя много времени в помещении и взаимодействуя с близко расположенными предметами, усугубляется течение заболевания. Для снижения риска болезни рекомендуется больше времени проводить на улице.
+                            </div>
+                        </div>
+                        <div class='impairment__liststar-item mt-3'>
+                            <div class='star'></div>
+                            <div class='impairment__liststar-text'>
+                                <span class='impairment__liststar-text_blue'>Диабетическая ретинопатия</span>
+                                является следствием сахарного диабета, который появляется почти у всех больных. Регулярные проверки, получение качественной медицинской помощи могут защитить людей от заболевания сетчатки.
+                            </div>
+                        </div>
+                        <div class='impairment__liststar-item mt-3'>
+                            <div class='star'></div>
+                            <div class='impairment__liststar-text'>
+                                Некачественная или несвоевременная диагностика не может обеспечить получение пациентом подходящего лечения. Зачастую, это полное отсутствие профилактики, которое приводит к выявлению болезни, находящейся уже в запущенной стадии.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='access'>
+        <div class='container'>
+            <div class='row justify-content-center'>
+                <div class='col-lg-8'>
+                    <h2 class='title access__title'>
+                        Доступ к офтальмологической помощи
+                    </h2>
+                </div>
+                <div class='col-lg-8'>
+                    <div class='access__subheader'>
+                        Миллионы людей лишены возможности получать офтальмологическую помощь, в том числе:
+                    </div>
+                </div>
+                <div class='col-lg-8'>
+                    <div class='access__help'>
+                        <div class='access__help-item'>
+                            <div class='access__help-logo'>
+                                <svg class="access__help-prevention">
+                                    <use xlink:href="icons/sprite.svg#prevention"></use>
+                                </svg>
+                            </div>
+                            <div class='access__help-text'>
+                                Профилактические мероприятия
+                            </div>
+                        </div>
+                        <div class='access__help-item'>
+                            <div class='access__help-logo'>
+                                <svg class="access__help-diagnosis">
+                                    <use xlink:href="icons/sprite.svg#diagnosis"></use>
+                                </svg>
+                            </div>
+                            <div class='access__help-text'>
+                                Раннюю диагностику
+                            </div>
+                        </div>
+                        <div class='access__help-item'>
+                            <div class='access__help-logo'>
+                                <svg class="access__help-curing">
+                                    <use xlink:href="icons/sprite.svg#curing"></use>
+                                </svg>
+                            </div>
+                            <div class='access__help-text'>
+                                Лечение
+                            </div>
+                        </div>
+                        <div class='access__help-item'>
+                            <div class='access__help-logo'>
+                                <svg class="access__help-rehabilitation">
+                                    <use xlink:href="icons/sprite.svg#rehabilitation"></use>
+                                </svg>
+                            </div>
+                            <div class='access__help-text'>
+                                Реабелитацию
+                            </div>
+                        </div>
+                        <img class="access__help-logo" src="src/icons/littlelogo.svg" alt="logo">
+                    </div>
+                </div>
+                <div class='col-lg-8'>
+                    <div class='access__text'>
+                        Генеральный директор Всемирной Организации Здравоохранения (ВОЗ) Тедрос Адханом Гебрейесус отмечает, что отсутствие надлежащей офтальмологической помощи лишает людей возможности принимать активное участие в общественной жизни, получать доступ к реабилитационным услугам.
+                        По его мнению,
+                    </div>
+                </div>
+                <div class='col-lg-8'>
+                    <div class='access__quote'>
+                        <div class='access__quote-mark'>
+                            <svg class="access__quote-img">
+                                <use xlink:href="icons/sprite.svg#quotes"></use>
+                            </svg>
+                        </div>
+                        <div class='access__quote-text'>
+                            Каждый больной должен иметь возможность получать офтальмологическую помощь без каких бы то ни было серьезных финансовых затрат.
+                        </div>
+                        <div class='access__quote-author'>
+                            <div class='access__quote-name'>д-р Тедрос Адханом Гебрейесус</div>
+                            <span class='access__quote-job'>Генеральный директор ВОЗ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-lg-8'>
+                    <div class='access__offer-descr'>
+                        Он предлагает, чтобы правительства стран в пакеты по базовому медицинскому обслуживанию обязательно включали офтальмологические услуги.
+                    </div>
+                </div>
+                <div class='col-lg-8 d-flex d-lg-none'>
+                    <div class='social-big'>
+                        <div class='social-big__text'>Share:</div>
+                        <div class='social-big__block'>
+                            <a class="social-big__link" href="#">
+                                <svg class="social-big__facebook">
+                                    <use xlink:href="icons/sprite.svg#facebook-blue"></use>
+                                </svg>
+                            </a>
+                            <a class="social-big__link" href="#">
+                                <svg class="social-big__pinterest">
+                                    <use xlink:href="icons/sprite.svg#pinterest"></use>
+                                </svg>
+                            </a>
+                            <a class="social-big__link" href="#">
+                                <svg class="social-big__twitter">
+                                    <use xlink:href="icons/sprite.svg#twitter"></use>
+                                </svg>
+                            </a>
+                            <a class="social-big__link" href="#">
+                                <svg class="social-big__linkedin">
+                                    <use xlink:href="icons/sprite.svg#linkedin"></use>
+                                </svg>
+                            </a>
+                            <a class="social-big__link" href="#">
+                                <svg class="social-big__telegram">
+                                    <use xlink:href="icons/sprite.svg#telegram"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='read-more'>
+        <div class='container'>
+            <div class='row justify-content-center'>
+                <div class='col-12'>
+                    <h2 class='read-more__title'>Еще почитать</h2>
+                </div>
+                <div class='col-12'>
+                    <div class='read-more__wrapper'>
+                        <div class='read-more__item'>
+                            <div class='read-more__item-img'>
+                                <img src='src/img/photoscards/cataract.jpg' alt='cataract'>
+                                <div class='read-more__item-img-label'>Статьи</div>
+                            </div>
+                            <div class='read-more__item-wrap'>
+                                <div class='read-more__item-subheader'>
+                                    5 способов профилактики катаракты
+                                </div>
+                                <span class='arrow read-more__arrow'></span>
+                            </div>
+                            <div class='read-more__item-date'>23 февраля</div>
+                        </div>
+                        <div class='read-more__item'>
+                            <div class='read-more__item-img'>
+                                <img src='src/img/photoscards/report.jpg' alt='report'>
+                                <div class='read-more__item-img-label'>Советы</div>
+                            </div>
+                            <div class='read-more__item-wrap'>
+                                <div class='read-more__item-subheader'>
+                                    Всемирный доклад о проблемах здоровья
+
+                                </div>
+                                <span class='arrow read-more__arrow'></span>
+                            </div>
+                            <div class='read-more__item-date'>8 июля</div>
+                        </div>
+                        <div class='read-more__item'>
+                            <div class='read-more__item-img'>
+                                <img src='src/img/photoscards/glaucoma.jpg' alt='glaucoma'>
+                                <div class='read-more__item-img-label'>Блог</div>
+                            </div>
+                            <div class='read-more__item-wrap'>
+                                <div class='read-more__item-subheader'>
+                                    Лечение глаукомы народными средствами
+                                </div>
+                                <span class='arrow read-more__arrow'></span>
+                            </div>
+                            <div class='read-more__item-date'>8 июля</div>
+                        </div>
+                        <div class='read-more__item d-flex d-lg-none'>
+                            <div class='read-more__item-img'>
+                                <img src='src/img/photoscards/glaucoma.jpg' alt='glaucoma'>
+                                <div class='read-more__item-img-label'>Блог</div>
+                            </div>
+                            <div class='read-more__item-wrap'>
+                                <div class='read-more__item-subheader'>
+                                    Лечение глаукомы народными средствами
+                                </div>
+                                <span class='arrow read-more__arrow'></span>
+                            </div>
+                            <div class='read-more__item-date'>8 июля</div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-12'>
+                    <div class='read-more__btns'>
+                        <a href='#' class='read-more__btns-articles'>
+                            Больше похожих статей
+                        </a>
+                        <div class='read-more__btns-pageup'>
+                            <a href='#up' class="read-more__btns-text">Наверх</a>
+                            <span class='arrow read-more__arrow read-more__arrow_top'></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class='footer'>
+        <div class='container'>
+            <div class='footer__links'>
+                <div class='footer__patients'>
+                    <div class='footer__patients-subtitle'>Пациентам</div>
+                    <ul class='footer__list'>
+                        <li class='footer__list-item'>
+                            <a href='#'>Каталог заболеваний</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>Отзывы</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>Оборудование</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>Линзы</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>Контакты клиник</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>Цены</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class='footer__popular'>
+                    <div class='footer__popular-subtitle'>Популярное</div>
+                    <ul class='footer__list'>
+                        <li class='footer__list-item'>
+                            <a href='#'>Услуги</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>Больницы</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>Врачи</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>Блог</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>Партнерам</a>
+                        </li>
+                        <li class='footer__list-item'>
+                            <a href='#'>О нас</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class='footer__call'>
+                    <div class='footer__call-contacts'>Звоните нам</div>
+                    <div class='phonecontacts'>
+                        <a href="tel:+80985554100" class="phonecontacts__phone">+380 (98) 555 41 00</a>
+                        <a href="tel:+80665554100" class="phonecontacts__phone">+380 (66) 555 41 00</a>
+                        <div class='phonecontacts__call' data-bs-toggle="modal" data-bs-target="#myModal">
+                            <div class='phonecontacts__call_text'>Перезвоните мне</div>
+                            <svg class="phonecontacts__call_greenarrow">
+                                <use xlink:href="icons/sprite.svg#greenarrow"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="schedule">
+                        <div class="schedule__work">Время работы call центра</div>
+                        <div class="schedule__time">Пн-Пт: 8:00-21:00</div>
+                        <div class="schedule__time">Сб-Вс: 8:00-20:00</div>
+                    </div>
+                </div>
+                <div class='footer__follow'>
+                    <div class='follow-us footer__follow-us'>
+                        <div class='follow-us__text footer__follow-us-text'>Следите за нами</div>
+                        <div class='follow-us__social footer__follow-us-social'>
+                            <a href='#'>
+                                <svg class="follow-us__social_inst">
+                                    <use xlink:href="icons/sprite.svg#instagram"></use>
+                                </svg>
+                            </a>
+                            <a href='#'>
+                                <svg class="follow-us__social_youtube">
+                                    <use xlink:href="icons/sprite.svg#youtube"></use>
+                                </svg>
+                            </a>
+                            <a href='#'>
+                                <svg class="follow-us__social_facebook">
+                                    <use xlink:href="icons/sprite.svg#facebook"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='footer__write'>
+                    <div class='footer__write-wrap'>
+                        <div class='footer__write-subtitle'>Пишите нам</div>
+                        <a href="mailto:zrenie.dp@gmail.com" class='footer__write-mail'>zrenie.dp@gmail.com</a>
+                    </div>
+                    <div class='footer__language d-none d-lg-block'>
+                        <a href='#' class='footer__ua active'>UA</a>
+                        <a href='#' class='footer__ru'>RU</a>
+                    </div>
+                </div>
+            </div>
+            <div class='footer__info'>
+                <div class='footer__rights'>
+                    <a href="#" class="footer__rights-logo">
+                        <img src="src/icons/logo.svg" alt="logo">
+                    </a>
+                    <div class='footer__rights-descr'>
+                        © 2020-2021 zrenie.dp.ua Все права защищены
+                    </div>
+                </div>
+                <div class='footer__copyright'>
+                    Копирование, тиражирование, а равноиное использование материалов, размещенных на zrenie.dp.ua возможно только с письменного разрешения Правообладателя.
+                </div>
+                <div class='footer__codex'>
+                    Данный сайт носит исключительно информационный характер и ни при каких условиях информационные материалыи цены, размещенные на сайте, не являются публичной офертой, определяемой положениями Гражданского кодекса Украины.
+                </div>
+                <div class='footer__company'>
+                    <a href="#" class="footer__company-logo">
+                        <img src="src/icons/footerlogo/company.svg" alt="logocompany">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="#">
+                    <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    <div class="modal-title" id="exampleModalLabel">Мы свяжемся с вами как можно быстрее!</div>
+                    <input required placeholder="Ваше имя" name="name" type="text" class="form-control modal__input" aria-label="Имя">
+                    <input required placeholder="Ваш номер телефона" name="phone" type="tel" class="form-control modal__input">
+                    <button type="submit" class="btn btn_dark btn_min">Перезвонить мне</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
