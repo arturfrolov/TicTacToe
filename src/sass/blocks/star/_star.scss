@@ -1,0 +1,11 @@
+.star {
+  &:before {
+    content: "∗";
+    font-family: Gotham Pro, sans-serif;
+    font-size: 16px;
+    color: #0833C5;
+    font-weight: 700;
+    line-height: 150%;
+    padding-right: 9px;
+  }
+}

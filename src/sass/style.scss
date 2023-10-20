@@ -1,0 +1,27 @@
+@import './base';
+@import 'variables';
+@import "bootstrap/scss/bootstrap";
+@import 'libs/font';
+
+@import './blocks/button/button';
+@import './blocks/search/search';
+@import './blocks/arrow/arrow';
+@import './blocks/title/title';
+@import './blocks/subtitle/subtitle';
+@import './blocks/social/social';
+@import './blocks/social/social-big';
+@import './blocks/modal/modal';
+@import './blocks/star/star';
+@import './blocks/follow-us/follow-us';
+@import './blocks/header/header';
+@import './blocks/phonecontacts/phonecontacts';
+@import './blocks/schedule/schedule';
+@import './blocks/pagenav/pagenav';
+@import './blocks/report/report';
+@import './blocks/conclusions/conclusions';
+@import './blocks/impairment/impairment';
+@import './blocks/access/access';
+@import './blocks/read-more/read-more';
+@import './blocks/footer/footer';
+
+@import './blocks/header/header-media';

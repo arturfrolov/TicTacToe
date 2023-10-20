@@ -1,0 +1,56 @@
+.modal {
+  &-content {
+    border-radius: 4px;
+    padding: 40px;
+    font-family: Gotham Pro, sans-serif;
+    font-style: normal;
+  }
+  &-close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+  }
+  &__input {
+    width: 280px;
+    height: 50px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,.2);
+    border: none;
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+  &-title {
+    color: #001F2F;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: center;
+  }
+  & .btn {
+    width: 280px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    background-color: #0833C5;
+    box-shadow: 0 4px 15px rgba(0,0,0,.3);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all .3s;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+    &:hover {
+      color: #fff;
+      background-color: #0833C5;
+      box-shadow: 0 0.5em 0.5em -0.2em rgba(0, 0, 0, 0.7);
+    }
+    &:active {
+      color: #fff;
+      background-color: #0833C5;
+    }
+  }
+}

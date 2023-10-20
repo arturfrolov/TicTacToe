@@ -1,0 +1,21 @@
+.pagenav {
+  font-family: Acme, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  overflow: hidden;
+  background-color: #F8F9FA;
+  .colorgray {
+    color: #BDBDBD;
+  }
+  & .breadcrumb-item {
+    &:not(:first-child) {
+      &:before {
+        content: '\2192';
+        height: 5px;
+        color: #BDBDBD;
+      }
+    }
+  }
+}

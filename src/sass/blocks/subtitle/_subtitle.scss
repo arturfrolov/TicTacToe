@@ -1,0 +1,12 @@
+.subtitle {
+  color: #001F2F;
+  font-family: Gotham Pro, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  margin: 0;
+  @include media-breakpoint-down(sm) {
+    font-size: 15px;
+  }
+}

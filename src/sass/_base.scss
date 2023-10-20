@@ -1,0 +1,37 @@
+@import "../../node_modules/normalize.css/normalize.css";
+
+.mt14 {
+    margin-top: 14px;
+}
+.mt40 {
+    margin-top: 40px;
+}
+a {
+    text-decoration: none;
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+);
+
+$container-max-widths: (
+        sm: 540px,
+        md: 750px,
+        lg: 960px,
+        xl: 1115px,
+        xxl: 1320px
+);
+
+$link-decoration: none;

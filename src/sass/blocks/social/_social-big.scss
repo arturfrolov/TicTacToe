@@ -1,0 +1,52 @@
+.social-big {
+  display: flex;
+  align-items: center;
+  margin-top: 34px;
+  &__text {
+    color: var(--blue-text);
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 500;
+    margin-right: 11px;
+  }
+  &__block {
+    display: flex;
+    flex-direction: row;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--blue-text);
+    @include media-breakpoint-down(sm) {
+      width: 45px;
+      height: 45px;
+    }
+    &:nth-child(even) {
+      border-left: none;
+      border-right: none;
+    }
+  }
+  &__facebook {
+    width: 24px;
+    height: 24px;
+  }
+  &__pinterest {
+    width: 23px;
+    height: 23px;
+  }
+  &__twitter {
+    width: 20px;
+    height: 20px;
+  }
+  &__linkedin {
+    width: 22px;
+    height: 23px;
+  }
+  &__telegram {
+    width: 23px;
+    height: 19px;
+  }
+}

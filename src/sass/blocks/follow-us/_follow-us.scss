@@ -1,0 +1,25 @@
+.follow-us {
+  display: flex;
+  flex-direction: column;
+  width: 122px  ;
+  margin-top: 4px;
+  &__social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 7px;
+    &_inst {
+      width: 22px;
+      height: 22px;
+    }
+    &_youtube {
+      width: 28px;
+      height: 20px;
+    }
+    &_facebook {
+      width: 12px;
+      height: 26px;
+    }
+  }
+}

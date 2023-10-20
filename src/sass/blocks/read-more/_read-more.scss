@@ -1,0 +1,180 @@
+.read-more {
+  background-color: #F8F9FA;
+  color: var(--blue-text);
+  font-family: Gotham Pro, sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  @include media-breakpoint-down(sm) {
+    padding: 70px 0 46px 0;
+  }
+  @include media-breakpoint-up(sm) {
+    padding: 92px 0 46px 0;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 130px 0 58px 0;
+  }
+  &__title {
+    font-weight: 400;
+    line-height: 45px;
+    margin-bottom: 0;
+    @include media-breakpoint-down(sm) {
+      font-size: 35px;
+    }
+    @include media-breakpoint-up(sm) {
+      font-size: 45px;
+    }
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 356px);
+    grid-template-rows: minmax(331px, auto);
+    grid-auto-rows: minmax(331px, auto);
+    justify-content: space-between;
+    row-gap: 35px;
+    @include media-breakpoint-down(sm) {
+      margin-top: 23px;
+      grid-template-columns: repeat(1, auto);
+      row-gap: 27px;
+    }
+    @include media-breakpoint-up(sm) {
+      margin-top: 43px;
+      grid-template-columns: repeat(1, auto);
+      row-gap: 70px;
+    }
+    @include media-breakpoint-up(md) {
+      margin-top: 43px;
+      grid-template-columns: repeat(2, 356px);
+      justify-content: space-between;
+      row-gap: 35px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-top: 50px;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 17px;
+    }
+    @include media-breakpoint-up(xl) {
+      grid-template-columns: repeat(3, 356px);
+      column-gap: 0;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 9px;
+    border-bottom: solid 1px var(--blue-text);
+    cursor: pointer;
+    &-img {
+      height: 213px;
+      position: relative;
+      &-label {
+        position: absolute;
+        right: 17px;
+        bottom: 17px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 77px;
+        height: 29px;
+        background-color: var(--btn-color);
+        color: var(--blue-text);
+        font-size: 15px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &-subheader {
+      @include media-breakpoint-down(sm) {
+        font-size: 25px;
+      }
+    }
+    &-date {
+      color: #BDBDBD;
+      line-height: 100%;
+      @include media-breakpoint-down(sm) {
+        font-size: 16px;
+      }
+      @include media-breakpoint-up(sm) {
+        font-size: 14px;
+      }
+    }
+  }
+  &__arrow {
+    width: 17px;
+    margin-top: 10px;
+    &:after {
+      width: 6px;
+    }
+    &:before {
+      width: 6px;
+    }
+    &_top {
+      transform: rotate(270deg);
+      background-color: #0833C5;
+      margin-left: 10px;
+    }
+  }
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include media-breakpoint-down(sm) {
+      margin-top: 49px;
+    }
+    @include media-breakpoint-up(sm) {
+      margin-top: 32px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-top: 36px;
+    }
+    &-articles {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 355px;
+      height: 80px;
+      border: 2px solid var(--green-text);
+      color: var(--blue-text);
+      font-size: 16px;
+      font-weight: 500;
+      @include media-breakpoint-down(sm) {
+        width: 290px;
+        height: 56px;
+      }
+      @include media-breakpoint-up(lg) {
+        width: 300px;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 355px;
+      }
+    }
+    &-pageup {
+      display: flex;
+      justify-content: center;
+      @include media-breakpoint-down(sm) {
+        margin-top: 34px;
+      }
+      @include media-breakpoint-up(sm) {
+        margin-top: 38px;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-top: 57px;
+      }
+    }
+    &-text {
+      color: #0833C5;
+      font-size: 22px;
+      font-weight: 400;
+    }
+  }
+}
