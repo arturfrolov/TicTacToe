@@ -5,6 +5,7 @@ import url from '@rollup/plugin-url';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import htmlPurge from 'vite-plugin-html-purgecss';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import Svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
@@ -62,6 +63,13 @@ export default defineConfig({
             fileName: '[dirname][hash][extname]', // шаблон имени файла
             publicPath: 'assets/', // публичный путь к ресурсам
             include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot', '**/*.svg', '**/*.png', '**/*.jpg', '**/*.jpeg'], // какие типы файлов обрабатывать
+        }),
+
+        createSvgIconsPlugin({
+            // Specify the icon folder to be cached
+            iconDirs: [path.resolve(process.cwd(), 'src/icons')],
+            // Specify symbolId format
+            symbolId: 'icon-[dir]-[name]',
         }),
     ],
 

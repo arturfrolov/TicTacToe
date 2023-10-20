@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=development && vite build && vite preview",
-    "dev": "set NODE_ENV=development&&vite",
-    "prod": "set NODE_ENV=production&&vite build",
-    "optimize": "set NODE_ENV=development&&vite optimize",
-    "clean": "rd /s /q dist",
+    "start": "set NODE_ENV=production && vite build && vite preview",
+    "dev": "set NODE_ENV=development && vite",
+    "prod": "set NODE_ENV=production && vite build",
+    "optimize": "set NODE_ENV=development && vite optimize",
+    "clean:win": "rd /s /q dist",
     "clear:linux": "rm -rf dist"
   },
   "author": "",
@@ -32,6 +32,7 @@
     "vite": "^4.5.0",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-html-purgecss": "^0.1.1",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-svgr": "^4.1.0"
   },
   "dependencies": {
