@@ -1,27 +1,88 @@
-@import './base';
-@import 'variables';
+@import './reset';
 @import "bootstrap/scss/bootstrap";
 @import 'libs/font';
 
-@import './blocks/button/button';
-@import './blocks/search/search';
-@import './blocks/arrow/arrow';
-@import './blocks/title/title';
-@import './blocks/subtitle/subtitle';
-@import './blocks/social/social';
-@import './blocks/social/social-big';
-@import './blocks/modal/modal';
-@import './blocks/star/star';
-@import './blocks/follow-us/follow-us';
-@import './blocks/header/header';
-@import './blocks/phonecontacts/phonecontacts';
-@import './blocks/schedule/schedule';
-@import './blocks/pagenav/pagenav';
-@import './blocks/report/report';
-@import './blocks/conclusions/conclusions';
-@import './blocks/impairment/impairment';
-@import './blocks/access/access';
-@import './blocks/read-more/read-more';
-@import './blocks/footer/footer';
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f3;
+  font-size: 20px;
+}
 
-@import './blocks/header/header-media';
+.tictactoe {
+  text-align: center;
+  width: 300px;
+
+  &__status {
+    margin-bottom: 40px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 20px;
+    background: #f0f0f3;
+    box-shadow: 10px 10px 21px #d3d3d6,
+                -10px -10px 21px #fff;
+
+    & > div {
+      width: 100px;
+      height: 100px;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      & .cross {
+        fill: red;
+        height: 50px;
+        width: 50px;
+      }
+
+      & .zero {
+        fill: blue;
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    & > div:not(:nth-child(3n)) {
+      border-right: 2px solid #d9d9d9;
+    }
+
+    & > div:not(:nth-last-child(-n+3)) {
+      border-bottom: 2px solid #d9d9d9;
+    }
+  }
+
+
+  &__x, &__0 {
+    display: inline-block;
+    padding: 5px 10px;
+    width: 100px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: 0.3s all ease-in-out;
+    user-select: none;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    margin: 0 5px;
+    font-weight: bold;
+  }
+
+  &__x {
+    color: red;
+  }
+
+  &__0 {
+    color: blue;
+  }
+
+  &__x.active, &__0.active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+}
