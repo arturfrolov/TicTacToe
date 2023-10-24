@@ -4,9 +4,12 @@ import alias from '@rollup/plugin-alias';
 import url from '@rollup/plugin-url';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
-import htmlPurge from 'vite-plugin-html-purgecss';
+// import htmlPurge from 'vite-plugin-html-purgecss';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import Svgr from 'vite-plugin-svgr';
+import svgr from 'vite-plugin-svgr';
+import eslint from 'vite-plugin-eslint';
+
+const postcssPresetEnv = require('postcss-preset-env');
 
 export default defineConfig({
     server: {
@@ -35,7 +38,11 @@ export default defineConfig({
         image(),
         // htmlPurge(),
         alias(),
-        Svgr(),
+        svgr(),
+        eslint({
+            failOnWarning: false,
+            failOnError: false,
+        }),
         createHtmlPlugin({
             minify: true,
             entry: path.resolve(__dirname, 'src', 'js/main.js'),
@@ -44,7 +51,7 @@ export default defineConfig({
             inject: {
                 data: {
                     // title: 'index',
-                    injectScript: `<script src="./inject.js"></script>`,
+                    injectScript: '<script src="./inject.js"></script>',
                 },
                 tags: [
                     {
@@ -75,7 +82,7 @@ export default defineConfig({
 
     css: {
         postcss: {
-            plugins: [require('postcss-preset-env')()],
+            plugins: [postcssPresetEnv()],
         },
     },
 
