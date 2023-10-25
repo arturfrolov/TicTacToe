@@ -9,7 +9,7 @@
     "prod": "set NODE_ENV=production && vite build",
     "optimize": "set NODE_ENV=development && vite optimize",
     "clean:win": "rd /s /q dist",
-    "clear:linux": "rm -rf dist"
+    "clean:linux": "rm -rf dist"
   },
   "author": "",
   "license": "ISC",

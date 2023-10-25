@@ -23,18 +23,18 @@ function initTic() {
         [0, 4, 8], [2, 4, 6] // диагонали
     ];
 
-    function checkWinCombinations() {
+    // function winnerDisplay() {
+    //
+    // }
+
+    function checkWinCombinations(currentPlayerValue) {
 
         for (const combination of winCombinations) {
-            const winX = combination.every( item => gameFieldElements[item].classList.contains('X'));
-            const win0 = combination.every( item => gameFieldElements[item].classList.contains('0'));
-            if (winX) {
-                console.log('X wins');
+            const winPlayer = combination.every( item => gameFieldElements[item].classList.contains(currentPlayerValue));
+            if (winPlayer) {
+                console.log(currentPlayerValue, 'wins');
                 break;
-            } else if (win0) {
-                console.log('0 wins');
-                break;
-            } else if (!winX && !win0 && counter > 9) {
+            } else if (!winPlayer && counter > 9) {
                 console.log('score tie');
                 break;
             }
@@ -45,12 +45,13 @@ function initTic() {
     function status(player) {
         if (player === 'X') {
             currentPlayer.textContent = '0';
-            statusPlayer0.classList.remove('active');
-            statusPlayerX.classList.add('active');
-        } else {
-            currentPlayer.textContent = 'X';
             statusPlayerX.classList.remove('active');
             statusPlayer0.classList.add('active');
+        } else {
+            currentPlayer.textContent = 'X';
+            statusPlayer0.classList.remove('active');
+            statusPlayerX.classList.add('active');
+
         }
     }
     function addClickCell({
@@ -84,7 +85,7 @@ function initTic() {
                 clicked: 'clicked_once',
                 statusValue: '0',
             });
-            checkWinCombinations();
+            checkWinCombinations('0');
         } else {
             addClickCell({
                 event,
@@ -92,7 +93,7 @@ function initTic() {
                 clicked: 'clicked_once',
                 statusValue: 'X',
             });
-            checkWinCombinations();
+            checkWinCombinations('X');
         }
     })
 }
