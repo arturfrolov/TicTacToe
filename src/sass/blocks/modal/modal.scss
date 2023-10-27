@@ -1,0 +1,16 @@
+.modal-content {
+  background-color: hsla(30, 12%, 23%, 0.95);
+  margin: 0 auto;
+  width: 300px;
+  height: 200px;
+  .modal-header {
+    color: #FFF;
+    justify-content: center;
+    border-bottom: none;
+  }
+  .modal-body {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}

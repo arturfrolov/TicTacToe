@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=production && vite build && vite preview",
-    "dev": "set NODE_ENV=development && vite",
-    "prod": "set NODE_ENV=production && vite build",
-    "optimize": "set NODE_ENV=development && vite optimize",
+    "start": "vite build && vite preview",
+    "dev": "vite",
+    "prod": "vite build",
+    "optimize": "vite optimize",
     "clean:win": "rd /s /q dist",
     "clean:linux": "rm -rf dist"
   },

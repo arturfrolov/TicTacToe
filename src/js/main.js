@@ -1,4 +1,4 @@
-// import 'bootstrap';
+import 'bootstrap';
 import '../sass/style.scss';
 // import '../icons/sprite.svg';
 // eslint-disable-next-line import/no-unresolved
@@ -6,15 +6,23 @@ import 'virtual:svg-icons-register';
 
 
 
-
+// eslint-disable-next-line func-names
+window.onload = function() {
+    const chooseBtn = document.querySelector('.js--choose_btn');
+    console.log(chooseBtn);
+    if (chooseBtn) {
+        chooseBtn.click();
+    }
+}
 
 function initTic() {
     const gameField = document.querySelector('.tictactoe__grid');
     const currentPlayer = document.querySelector('#currentPlayer');
     const statusPlayerX = document.querySelector('.tictactoe__x');
     const statusPlayer0 = document.querySelector('.tictactoe__0');
-    const gameFieldElements = gameField.querySelectorAll('div');
-    console.log(gameFieldElements)
+    const gameFieldElements = gameField.getElementsByTagName('div');
+    const winBtn = document.querySelector('.js--win_btn');
+    const winnerLabel = document.querySelector('#winnerLabel');
     let counter = 1;
 
     const winCombinations = [
@@ -23,9 +31,19 @@ function initTic() {
         [0, 4, 8], [2, 4, 6] // диагонали
     ];
 
-    // function winnerDisplay() {
-    //
-    // }
+    function winnerDisplay(winner) {
+        // eslint-disable-next-line no-unused-expressions
+        winner.length > 1
+            ? winnerLabel.textContent = 'score tie'
+            : winnerLabel.textContent = `${winner} WIN`;
+        gameField.innerHTML = `
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        `;
+        counter = 1;
+        winBtn.click();
+    }
 
     function checkWinCombinations(currentPlayerValue) {
 
@@ -33,9 +51,11 @@ function initTic() {
             const winPlayer = combination.every( item => gameFieldElements[item].classList.contains(currentPlayerValue));
             if (winPlayer) {
                 console.log(currentPlayerValue, 'wins');
+                winnerDisplay(currentPlayerValue);
                 break;
             } else if (!winPlayer && counter > 9) {
                 console.log('score tie');
+                winnerDisplay('score tie');
                 break;
             }
         }
