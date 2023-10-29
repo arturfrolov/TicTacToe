@@ -9,13 +9,18 @@ import 'virtual:svg-icons-register';
 // eslint-disable-next-line func-names
 window.onload = function() {
     const chooseBtn = document.querySelector('.js--choose_btn');
-    console.log(chooseBtn);
     if (chooseBtn) {
         chooseBtn.click();
     }
 }
 
-function initTic() {
+
+const playerBtn = document.querySelector('.js--player');
+const computerBtn = document.querySelector('.js--computer');
+
+
+
+function initTic(computer) {
     const gameField = document.querySelector('.tictactoe__grid');
     const currentPlayer = document.querySelector('#currentPlayer');
     const statusPlayerX = document.querySelector('.tictactoe__x');
@@ -30,6 +35,17 @@ function initTic() {
         [0, 3, 6], [1, 4, 7], [2, 5, 8], // вертикали
         [0, 4, 8], [2, 4, 6] // диагонали
     ];
+
+
+
+    function comPlay() {
+        console.log(computer);
+        console.log(counter);
+        const noClickedCell = [...gameFieldElements].filter(item => !item.classList.contains('clicked_once'));
+        const randomElement = noClickedCell[Math.floor(Math.random() * noClickedCell.length)];
+        randomElement.click();
+    }
+
 
     function winnerDisplay(winner) {
         // eslint-disable-next-line no-unused-expressions
@@ -113,9 +129,19 @@ function initTic() {
                 clicked: 'clicked_once',
                 statusValue: 'X',
             });
+            if (computer) {
+                comPlay();
+            }
             checkWinCombinations('X');
+
         }
     })
 }
 
-initTic();
+playerBtn.addEventListener('click', () => {
+    initTic();
+});
+
+computerBtn.addEventListener('click', () => {
+    initTic(computerBtn);
+});
