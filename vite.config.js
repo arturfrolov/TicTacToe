@@ -5,7 +5,7 @@ import url from '@rollup/plugin-url';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 // import htmlPurge from 'vite-plugin-html-purgecss';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import svgr from 'vite-plugin-svgr';
 import eslint from 'vite-plugin-eslint';
 
@@ -45,23 +45,23 @@ export default defineConfig({
         }),
         createHtmlPlugin({
             minify: true,
-            entry: path.resolve(__dirname, 'src', 'js/main.js'),
-            template: path.resolve(__dirname, 'index.html'),
+            entry: 'src/js/main.js',
+            template: 'index.html',
 
             inject: {
                 data: {
                     // title: 'index',
-                    injectScript: '<script src="./inject.js"></script>',
+                    injectScript: '<script defer src="./inject.js"></script>',
                 },
-                tags: [
-                    {
-                        injectTo: 'body-prepend',
-                        tag: 'div',
-                        attrs: {
-                            id: 'tag',
-                        },
-                    },
-                ],
+                // tags: [
+                //     {
+                //         injectTo: 'body-prepend',
+                //         tag: 'div',
+                //         attrs: {
+                //             id: 'tag',
+                //         },
+                //     },
+                // ],
             },
         }),
 

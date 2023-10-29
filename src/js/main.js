@@ -83,7 +83,7 @@ function initTic() {
         console.dir(event.target);
 
         const currentCell = event.target;
-        if (!currentCell.classList.contains(clicked) && currentCell.tagName === 'DIV') {
+        if (!currentCell.classList.contains(clicked) && currentCell.tagName === 'DIV' && !currentCell.classList.contains('tictactoe__grid')) {
             currentCell.classList.add(clicked, statusValue)
             currentCell.innerHTML = `
               <svg class="${iconId}">
