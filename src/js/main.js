@@ -40,7 +40,7 @@ function initTic(computer) {
 
 
     function comPlay() {
-        console.log(counter);
+
         const noClickedCell = [...gameFieldElements].filter(item => !item.classList.contains('clicked_once'));
         const randomElement = noClickedCell[Math.floor(Math.random() * noClickedCell.length)];
         console.log(randomElement);
@@ -51,7 +51,6 @@ function initTic(computer) {
 
 
     function winnerDisplay(winner) {
-
         // eslint-disable-next-line no-unused-expressions
         winner.length > 1
             ? winnerLabel.textContent = 'score tie'
@@ -84,7 +83,6 @@ function initTic(computer) {
             currentPlayer.textContent = 'X';
             statusPlayer0.classList.remove('active');
             statusPlayerX.classList.add('active');
-
         }
     }
     function addClickCell({
@@ -106,6 +104,7 @@ function initTic(computer) {
             status(statusValue);
             counter++;
             checkWinCombinations(statusValue);
+            console.log(counter);
             if (computer && counter < 9 && statusValue === 'X') {
                 comPlay();
             }
