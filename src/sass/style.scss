@@ -1,8 +1,13 @@
 @import './reset';
 @import "bootstrap/scss/bootstrap";
-@import 'libs/font';
-@import 'blocks/btn/btn';
 @import 'blocks/modal/modal';
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
 
 body {
   font-family: Arial, sans-serif;

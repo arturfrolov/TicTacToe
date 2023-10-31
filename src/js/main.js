@@ -17,6 +17,7 @@ window.onload = function() {
 
 const playerBtn = document.querySelector('.js--player');
 const computerBtn = document.querySelector('.js--computer');
+const playAgain = document.querySelector('.js--play-again');
 
 
 
@@ -28,7 +29,7 @@ function initTic(computer) {
     const gameFieldElements = gameField.getElementsByTagName('div');
     const winBtn = document.querySelector('.js--win_btn');
     const winnerLabel = document.querySelector('#winnerLabel');
-    let counter = 1;
+    let counter = 0;
 
     const winCombinations = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // горизонтали
@@ -39,42 +40,38 @@ function initTic(computer) {
 
 
     function comPlay() {
-        console.log(computer);
         console.log(counter);
         const noClickedCell = [...gameFieldElements].filter(item => !item.classList.contains('clicked_once'));
         const randomElement = noClickedCell[Math.floor(Math.random() * noClickedCell.length)];
-        randomElement.click();
+        console.log(randomElement);
+        if (randomElement && counter !== 0) {
+            randomElement.click();
+        }
     }
 
 
     function winnerDisplay(winner) {
+
         // eslint-disable-next-line no-unused-expressions
         winner.length > 1
             ? winnerLabel.textContent = 'score tie'
             : winnerLabel.textContent = `${winner} WIN`;
-        gameField.innerHTML = `
-            <div></div><div></div><div></div>
-            <div></div><div></div><div></div>
-            <div></div><div></div><div></div>
-        `;
-        counter = 1;
+
+        counter = 0;
         winBtn.click();
     }
 
     function checkWinCombinations(currentPlayerValue) {
-
-        for (const combination of winCombinations) {
+        winCombinations.forEach((combination, index) => {
             const winPlayer = combination.every( item => gameFieldElements[item].classList.contains(currentPlayerValue));
             if (winPlayer) {
                 console.log(currentPlayerValue, 'wins');
                 winnerDisplay(currentPlayerValue);
-                break;
-            } else if (!winPlayer && counter > 9) {
+            } else if (!winPlayer && index >= 7 && counter >= 9) {
                 console.log('score tie');
                 winnerDisplay('score tie');
-                break;
             }
-        }
+        })
     }
 
 
@@ -96,7 +93,6 @@ function initTic(computer) {
         clicked,
         statusValue,
     }) {
-        console.dir(event.target);
 
         const currentCell = event.target;
         if (!currentCell.classList.contains(clicked) && currentCell.tagName === 'DIV' && !currentCell.classList.contains('tictactoe__grid')) {
@@ -106,35 +102,40 @@ function initTic(computer) {
                 <use xlink:href="#${iconId}"></use>
               </svg>
             `;
+            // console.log(counter);
             status(statusValue);
             counter++;
-
+            checkWinCombinations(statusValue);
+            if (computer && counter < 9 && statusValue === 'X') {
+                comPlay();
+            }
         }
-        console.dir(counter);
     }
 
     gameField.addEventListener('click', (event) => {
         if (counter % 2 === 0) {
             addClickCell({
                 event,
-                iconId: 'icon-zero',
-                clicked: 'clicked_once',
-                statusValue: '0',
-            });
-            checkWinCombinations('0');
-        } else {
-            addClickCell({
-                event,
                 iconId: 'icon-cross_1',
                 clicked: 'clicked_once',
                 statusValue: 'X',
             });
-            if (computer) {
-                comPlay();
-            }
-            checkWinCombinations('X');
-
+        } else {
+            addClickCell({
+                event,
+                iconId: 'icon-zero',
+                clicked: 'clicked_once',
+                statusValue: '0',
+            });
         }
+    })
+
+    playAgain.addEventListener('click', () => {
+        gameField.innerHTML = `
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+        `;
     })
 }
 
@@ -145,3 +146,5 @@ playerBtn.addEventListener('click', () => {
 computerBtn.addEventListener('click', () => {
     initTic(computerBtn);
 });
+
+
