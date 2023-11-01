@@ -8,53 +8,6 @@
     <title>tictactoe</title>
 </head>
 <body>
-<div class="tictactoe">
-    <div class="tictactoe__status">
-        <p class="tictactoe__current">Ходит: <span id="currentPlayer">X</span></p>
-        <p class="tictactoe__score" >Счет: <span class="tictactoe__x active">X - 0</span> | <span class="tictactoe__0">O - 0</span></p>
-    </div>
-    <div class="tictactoe__grid">
-        <div></div><div></div><div></div>
-        <div></div><div></div><div></div>
-        <div></div><div></div><div></div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="chooseModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pick your opponent</h1>
-                </div>
-                <div class="modal-body">
-                    <button type="button" class="btn btn-light js--player" data-bs-dismiss="modal">Another player</button>
-                    <button type="button" class="btn btn-light js--computer" data-bs-dismiss="modal">Сomputer</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="winModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="winnerLabel">WIN</h1>
-                </div>
-                <div class="modal-body">
-                    <button type="button" class="btn btn-light js--play-again" data-bs-dismiss="modal">Play Again</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary hide js--win_btn" data-bs-toggle="modal" data-bs-target="#winModal">
-        win modal
-    </button>
-
-    <button type="button" class="btn btn-primary hide js--choose_btn" data-bs-toggle="modal" data-bs-target="#chooseModal">
-        choose modal
-    </button>
-</div>
-
+    <div class='tic-tac-toe-container'></div>
 </body>
 </html>

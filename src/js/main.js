@@ -4,146 +4,191 @@ import '../sass/style.scss';
 // eslint-disable-next-line import/no-unresolved
 import 'virtual:svg-icons-register';
 
-
-
-// eslint-disable-next-line func-names
-window.onload = function() {
-    const chooseBtn = document.querySelector('.js--choose_btn');
-    if (chooseBtn) {
-        chooseBtn.click();
+class TicTacToe {
+    constructor() {
+        this.container = document.querySelector('.tic-tac-toe-container');
+        this.render();
+        this.counter = 0;
+        this.winCombinations = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], // горизонтали
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], // вертикали
+            [0, 4, 8], [2, 4, 6] // диагонали
+        ];
     }
-}
 
+    render()
+    {
+        const htmlContent = `
+            <div class='tictactoe'>
+                <div class='tictactoe__status'>
+                    <p class='tictactoe__current'>Ходит: <span id='currentPlayer'>X</span></p>
+                    <p class='tictactoe__score'>Счет: <span class='tictactoe__x active'>X - 0</span> | <span class='tictactoe__0'>O - 0</span></p>
+                </div>
+                <div class='tictactoe__grid'>
+                    <div></div><div></div><div></div>
+                    <div></div><div></div><div></div>
+                    <div></div><div></div><div></div>
+                </div>
+                
+                    <!-- Modal -->
+                <div class='modal fade' id='chooseModal' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
+                    <div class='modal-dialog modal-dialog-centered'>
+                        <div class='modal-content'>
+                            <div class='modal-header'>
+                                <h1 class='modal-title fs-5' id='staticBackdropLabel'>Pick your opponent</h1>
+                            </div>
+                            <div class='modal-body'>
+                                <button type='button' class='btn btn-light js--player' data-bs-dismiss='modal'>Another player</button>
+                                <button type='button' class='btn btn-light js--computer' data-bs-dismiss='modal'>Сomputer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-const playerBtn = document.querySelector('.js--player');
-const computerBtn = document.querySelector('.js--computer');
-const playAgain = document.querySelector('.js--play-again');
+                <div class='modal fade' id='winModal' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
+                    <div class='modal-dialog modal-dialog-centered'>
+                        <div class='modal-content'>
+                            <div class='modal-header'>
+                                <h1 class='modal-title fs-5' id='winnerLabel'>WIN</h1>
+                            </div>
+                            <div class='modal-body'>
+                                <button type='button' class='btn btn-light js--play-again' data-bs-dismiss='modal'>Play Again</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Button trigger modal -->
+                <button type='button' class='btn btn-primary hide js--win_btn' data-bs-toggle='modal' data-bs-target='#winModal'>
+                    win modal
+                </button>
+            
+                <button type='button' class='btn btn-primary hide js--choose_btn' data-bs-toggle='modal' data-bs-target='#chooseModal'>
+                    choose modal
+                </button>
+            </div>
+        `;
 
+        this.container.innerHTML = htmlContent;
 
-function initTic(computer) {
-    const gameField = document.querySelector('.tictactoe__grid');
-    const currentPlayer = document.querySelector('#currentPlayer');
-    const statusPlayerX = document.querySelector('.tictactoe__x');
-    const statusPlayer0 = document.querySelector('.tictactoe__0');
-    const gameFieldElements = gameField.getElementsByTagName('div');
-    const winBtn = document.querySelector('.js--win_btn');
-    const winnerLabel = document.querySelector('#winnerLabel');
-    let counter = 0;
+        this.chooseBtn = document.querySelector('.js--choose_btn');
+        this.playerBtn = document.querySelector('.js--player');
+        this.computerBtn = document.querySelector('.js--computer');
+        this.playAgain = document.querySelector('.js--play-again');
+        this.gameField = document.querySelector('.tictactoe__grid');
+        this.currentPlayer = document.querySelector('#currentPlayer');
+        this.statusPlayerX = document.querySelector('.tictactoe__x');
+        this.statusPlayer0 = document.querySelector('.tictactoe__0');
+        this.winBtn = document.querySelector('.js--win_btn');
+        this.winnerLabel = document.querySelector('#winnerLabel');
 
-    const winCombinations = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], // горизонтали
-        [0, 3, 6], [1, 4, 7], [2, 5, 8], // вертикали
-        [0, 4, 8], [2, 4, 6] // диагонали
-    ];
+        this.bindEvents();
+    }
 
+    bindEvents() {
+        this.gameField.addEventListener('click', (event) => this.handleCellClick(event));
+        this.playAgain.addEventListener('click', () => this.resetGame());
+    }
 
-
-    function comPlay() {
-
-        const noClickedCell = [...gameFieldElements].filter(item => !item.classList.contains('clicked_once'));
+    comPlay() {
+        const noClickedCell = Array.from(this.gameField.getElementsByTagName('div'))
+            .filter(item => !item.classList.contains('clicked_once'));
         const randomElement = noClickedCell[Math.floor(Math.random() * noClickedCell.length)];
-        console.log(randomElement);
-        if (randomElement && counter !== 0) {
+        if (randomElement && this.counter !== 0) {
             randomElement.click();
         }
     }
 
-
-    function winnerDisplay(winner) {
-        // eslint-disable-next-line no-unused-expressions
-        winner.length > 1
-            ? winnerLabel.textContent = 'score tie'
-            : winnerLabel.textContent = `${winner} WIN`;
-
-        counter = 0;
-        winBtn.click();
+    winnerDisplay(winner) {
+        this.winnerLabel.textContent = winner.length > 1 ? 'score tie' : `${winner} WIN`;
+        this.counter = 0;
+        this.winBtn.click();
     }
 
-    function checkWinCombinations(currentPlayerValue) {
-        winCombinations.forEach((combination, index) => {
-            const winPlayer = combination.every( item => gameFieldElements[item].classList.contains(currentPlayerValue));
+    checkWinCombinations(currentPlayerValue) {
+        this.winCombinations.forEach((combination, index) => {
+            const winPlayer = combination.every(item => this.gameField.getElementsByTagName('div')[item].classList.contains(currentPlayerValue));
             if (winPlayer) {
-                console.log(currentPlayerValue, 'wins');
-                winnerDisplay(currentPlayerValue);
-            } else if (!winPlayer && index >= 7 && counter >= 9) {
-                console.log('score tie');
-                winnerDisplay('score tie');
+                this.winnerDisplay(currentPlayerValue);
+            } else if (!winPlayer && index >= 7 && this.counter >= 9) {
+                this.winnerDisplay('score tie');
             }
-        })
+        });
     }
 
-
-    function status(player) {
+    status(player) {
         if (player === 'X') {
-            currentPlayer.textContent = '0';
-            statusPlayerX.classList.remove('active');
-            statusPlayer0.classList.add('active');
+            this.currentPlayer.textContent = '0';
+            this.statusPlayerX.classList.remove('active');
+            this.statusPlayer0.classList.add('active');
         } else {
-            currentPlayer.textContent = 'X';
-            statusPlayer0.classList.remove('active');
-            statusPlayerX.classList.add('active');
+            this.currentPlayer.textContent = 'X';
+            this.statusPlayer0.classList.remove('active');
+            this.statusPlayerX.classList.add('active');
         }
     }
-    function addClickCell({
-        event,
-        iconId,
-        clicked,
-        statusValue,
-    }) {
 
+    addClickCell({ event, iconId, clicked, statusValue }) {
         const currentCell = event.target;
         if (!currentCell.classList.contains(clicked) && currentCell.tagName === 'DIV' && !currentCell.classList.contains('tictactoe__grid')) {
-            currentCell.classList.add(clicked, statusValue)
+            currentCell.classList.add(clicked, statusValue);
             currentCell.innerHTML = `
               <svg class="${iconId}">
                 <use xlink:href="#${iconId}"></use>
               </svg>
             `;
-            // console.log(counter);
-            status(statusValue);
-            counter++;
-            checkWinCombinations(statusValue);
-            console.log(counter);
-            if (computer && counter < 9 && statusValue === 'X') {
-                comPlay();
+            this.status(statusValue);
+            this.counter++;
+            this.checkWinCombinations(statusValue);
+            if (this.computer && this.counter < 9 && statusValue === 'X') {
+                this.comPlay();
             }
         }
     }
 
-    gameField.addEventListener('click', (event) => {
-        if (counter % 2 === 0) {
-            addClickCell({
+    handleCellClick(event) {
+        if (this.counter % 2 === 0) {
+            this.addClickCell({
                 event,
                 iconId: 'icon-cross_1',
                 clicked: 'clicked_once',
                 statusValue: 'X',
             });
         } else {
-            addClickCell({
+            this.addClickCell({
                 event,
                 iconId: 'icon-zero',
                 clicked: 'clicked_once',
                 statusValue: '0',
             });
         }
-    })
+    }
 
-    playAgain.addEventListener('click', () => {
-        gameField.innerHTML = `
+    resetGame() {
+        this.gameField.innerHTML = `
             <div></div><div></div><div></div>
             <div></div><div></div><div></div>
             <div></div><div></div><div></div>
         `;
-    })
+    }
+
+    initTic(computer = false) {
+        this.computer = computer;
+        this.counter = 0;
+        this.resetGame();
+    }
 }
 
-playerBtn.addEventListener('click', () => {
-    initTic();
-});
+const ticTacToe = new TicTacToe();
 
-computerBtn.addEventListener('click', () => {
-    initTic(computerBtn);
-});
+window.onload = () => {
+    if (ticTacToe.chooseBtn) {
+        ticTacToe.chooseBtn.click();
+    }
+};
+
+ticTacToe.playerBtn.addEventListener('click', () => ticTacToe.initTic());
+ticTacToe.computerBtn.addEventListener('click', () => ticTacToe.initTic(true));
+
 
 
