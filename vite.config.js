@@ -24,7 +24,8 @@ export default defineConfig({
         assetsDir: 'assets',
         rollupOptions: {
             input: {
-                main: path.resolve(__dirname, 'src', 'js/main.js')
+                // main: path.resolve(__dirname, 'src', 'js/main.js')
+                main: path.resolve(__dirname, 'index.html')
             },
             output: {
                 entryFileNames: 'js/bundle.[hash].js',
