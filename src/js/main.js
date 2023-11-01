@@ -9,6 +9,8 @@ class TicTacToe {
         this.container = document.querySelector('.tic-tac-toe-container');
         this.render();
         this.counter = 0;
+        this.numberVictoriesX = 0;
+        this.numberVictories0 = 0;
         this.winCombinations = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8], // горизонтали
             [0, 3, 6], [1, 4, 7], [2, 5, 8], // вертикали
@@ -35,7 +37,7 @@ class TicTacToe {
                     <div class='modal-dialog modal-dialog-centered'>
                         <div class='modal-content'>
                             <div class='modal-header'>
-                                <h1 class='modal-title fs-5' id='staticBackdropLabel'>Pick your opponent</h1>
+                                <h1 class='modal-title' id='staticBackdropLabel'>Pick your opponent</h1>
                             </div>
                             <div class='modal-body'>
                                 <button type='button' class='btn btn-light js--player' data-bs-dismiss='modal'>Another player</button>
@@ -49,7 +51,7 @@ class TicTacToe {
                     <div class='modal-dialog modal-dialog-centered'>
                         <div class='modal-content'>
                             <div class='modal-header'>
-                                <h1 class='modal-title fs-5' id='winnerLabel'>WIN</h1>
+                                <h1 class='modal-title' id='winnerLabel'>WIN</h1>
                             </div>
                             <div class='modal-body'>
                                 <button type='button' class='btn btn-light js--play-again' data-bs-dismiss='modal'>Play Again</button>
@@ -81,6 +83,7 @@ class TicTacToe {
         this.statusPlayer0 = document.querySelector('.tictactoe__0');
         this.winBtn = document.querySelector('.js--win_btn');
         this.winnerLabel = document.querySelector('#winnerLabel');
+        this.score = document.querySelector('.tictactoe__score ')
 
         this.bindEvents();
     }
@@ -100,8 +103,15 @@ class TicTacToe {
     }
 
     winnerDisplay(winner) {
-        this.winnerLabel.textContent = winner.length > 1 ? 'score tie' : `${winner} WIN`;
+        this.winnerLabel.textContent = winner;
         this.counter = 0;
+        if (winner === 'X') {
+            this.numberVictoriesX++;
+            this.statusPlayerX.textContent = `X - ${this.numberVictoriesX}`;
+        } else if (winner === '0') {
+            this.numberVictories0++;
+            this.statusPlayer0.textContent = `X - ${this.numberVictories0}`;
+        }
         this.winBtn.click();
     }
 
