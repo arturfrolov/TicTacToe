@@ -85,10 +85,15 @@ class TicTacToe {
         this.winnerLabel = document.querySelector('#winnerLabel');
         this.score = document.querySelector('.tictactoe__score ')
 
-        this.bindEvents();
+        // this.bindEvents();
     }
 
     bindEvents() {
+        if (this.chooseBtn) {
+            this.chooseBtn.click();
+        }
+        this.playerBtn.addEventListener('click', () => this.initTic());
+        this.computerBtn.addEventListener('click', () => this.initTic(true));
         this.gameField.addEventListener('click', (event) => this.handleCellClick(event));
         this.playAgain.addEventListener('click', () => this.resetGame());
     }
@@ -190,15 +195,4 @@ class TicTacToe {
 }
 
 const ticTacToe = new TicTacToe();
-
-window.onload = () => {
-    if (ticTacToe.chooseBtn) {
-        ticTacToe.chooseBtn.click();
-    }
-};
-
-ticTacToe.playerBtn.addEventListener('click', () => ticTacToe.initTic());
-ticTacToe.computerBtn.addEventListener('click', () => ticTacToe.initTic(true));
-
-
-
+ticTacToe.bindEvents();
