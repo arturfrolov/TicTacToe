@@ -19,23 +19,30 @@ npm install
 
 In the project directory, you can run:
 
-### `npm run dev`
 
+```bash
+npm run dev
+```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm run start`
+```bash
+npm run start
+```
 
-Builds the app for production to the `dist` folder and then previews it.\
+Builds the app for production to the `dist` folder and then starts a local server to preview the built project.\
 It correctly bundles the app in production mode and optimizes the build for the best performance.
 
-The build is minified, and the filenames include the hashes.\
-Your app is ready to be deployed!
+After the build process is complete, a local server will start, and you can view your project in the browser.
 
-### `npm run prod`
+Your app is now ready to be deployed!
+
+```bash
+npm run prod
+```
 
 Builds the app for production to the `dist` folder.\
 It correctly bundles the app in production mode and optimizes the build for the best performance.
@@ -43,10 +50,14 @@ It correctly bundles the app in production mode and optimizes the build for the 
 The build is minified, and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-### `npm run clean:win`
+```bash
+npm run clean:win
+```
 
 Cleans the production build by removing the `dist` folder on Windows systems.
 
-### `npm run clean:linux`
+```bash
+npm run clean:linux
+```
 
 Cleans the production build by removing the `dist` folder on Linux systems.
